@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Install project dependencies.
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+# shellcheck disable=SC1091
+source utils.sh
+
+readonly LOG_FILENAME=${LOG_FILENAME:-"$LOG_DIR/bootstrap.log"}
+
+welcome() {
+  fancy_echo "Bootstrap script"
+}
+
+main() {
+  welcome
+}
+
+main "$@" 2>&1 | tee "$LOG_FILENAME"
