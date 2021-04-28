@@ -42,6 +42,7 @@ Source: [Google's Shell Style Guide](https://google.github.io/styleguide/shell.x
   - Shell Options:
 
     ```sh
+    shopt -s inherit_errexit
     set -o errexit # Abort script at first error
     set -o pipefail # Return last non-zero status in pipeline
     set -o nounset # Exit if any variable is undefined
@@ -60,6 +61,7 @@ Source: [Google's Shell Style Guide](https://google.github.io/styleguide/shell.x
 #
 # Install all project dependencies.
 
+shopt -s inherit_errexit
 set -o errexit
 set -o pipefail
 set -o nounset
